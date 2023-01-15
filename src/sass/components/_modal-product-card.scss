@@ -1,0 +1,304 @@
+.is-hidden .product-modal {
+  scale: 0;
+}
+.product-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.2);
+
+  transition-property: opacity, visibility;
+  //   @include transition;
+  z-index: 50;
+  backdrop-filter: blur(5px);
+}
+
+.product-modal {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  padding: 28px;
+
+  width: 280px;
+  // max-height: 100%;
+  height: 991px;
+
+  background-color: var(--light-text-color);
+  border: 2px solid var(--brend-color);
+  border-radius: 10px;
+
+  transition-property: scale;
+  //   @include transition;
+
+  @include mobile {
+    width: 280px;
+  }
+  @include tablet {
+    width: 568px;
+    // max-height: 100%;
+    height: 644px;
+    padding: 32px 54px;
+  }
+}
+.product-modal__btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+  &:hover,
+  &:hover:focus {
+    cursor: pointer;
+  }
+}
+.product-modal__icon {
+  fill: var(--dark-text-color);
+  display: block;
+  margin: 0;
+  transition-property: fill;
+  //   @include transition;
+
+  .product-modal__btn:hover &,
+  .product-modal__btn:focus & {
+    fill: var(--brend-color);
+  }
+  @include tablet {
+    width: 24px;
+    height: 24px;
+  }
+}
+.product-modal__title {
+  @include font(400, 16px, 1.5, null);
+
+  font-family: 'Seymour One';
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 82px;
+  color: var(--dark-text-color);
+
+  @include tablet {
+    @include font(null, 20px, 1.4, null);
+    margin-bottom: 103px;
+  }
+}
+.product-modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-modal-form__label {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 12px;
+  color: #000000;
+  @include tablet {
+    margin-bottom: 16px;
+  }
+}
+
+.product-modal-form__input {
+  width: 224px;
+  height: 32px;
+
+  padding: 8px 12px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  @include font(400, 12px, 1.4, null);
+  color: var(--dark-text-color);
+  background: rgba(248, 210, 78, 0.1);
+  border: 1px solid var(--primery-background-color);
+  border-radius: 10px;
+
+  outline: transparent;
+  transition-property: border-color;
+  //   @include transition;
+  @include tablet {
+    width: 368px;
+    height: 42px;
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.4, null);
+    color: var(--dark-text-color);
+  }
+  &:focus {
+    border-color: var(--brend-color);
+  }
+}
+
+.product-modal-textarea {
+  margin-bottom: 26px;
+}
+.product-modal-form__textarea {
+  width: 224px;
+  height: 65px;
+  padding: 8px 12px;
+  resize: none;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  @include font(400, 12px, 1.4, null);
+  color: var(--dark-text-color);
+
+  background: rgba(248, 210, 78, 0.1);
+  border: 1px solid var(--primery-background-color);
+  border-radius: 10px;
+  outline: transparent;
+  transition-property: border-color;
+  //   @include transition;
+  @include tablet {
+    width: 368px;
+    height: 84px;
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.4, null);
+    color: var(--dark-text-color);
+  }
+  &:focus {
+    border-color: var(--brend-color);
+  }
+}
+
+.product-modal-form__btn {
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dark-text-color);
+  @include font(null, 12px, 1.25, null);
+  @include tablet {
+    @include font(null, 14px, 1.21, null);
+  }
+}
+
+.product-modal-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 82px;
+  padding-bottom: 31px;
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding-bottom: 40px;
+  }
+}
+
+.product-modal-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  width: 132px;
+  height: 136px;
+  border-radius: 15px;
+  padding: 20px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 132px;
+    height: 132px;
+    top: -66px;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 50%;
+    box-shadow: 0px 5.40397px 20.2649px rgba(153, 114, 23, 0.25);
+    z-index: 20;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 132px;
+    height: 132px;
+    top: -59px;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  &--ice-cream {
+    border: 2px solid #96af8c;
+    filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+    &::before {
+      background-image: url(../images/modals/modal-1.png);
+      @include retina {
+        background-image: url(../images/modals/modal-1-2x.png);
+      }
+    }
+
+    &::after {
+      background: linear-gradient(
+          0deg,
+          rgba(156, 190, 143, 0.7),
+          rgba(156, 190, 143, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+    }
+  }
+  &--ice-coffee {
+    background: #efd478;
+    border: 2px solid #efd478;
+    box-shadow: 0px 5.26027px 19.726px rgba(212, 20, 67, 0.1);
+
+    &::before {
+      background-image: url(../images/modals/modal-2.png);
+      @include retina {
+        background-image: url(../images/modals/modal-2-2x.png);
+      }
+    }
+
+    &::after {
+      background: linear-gradient(
+          0deg,
+          rgba(248, 210, 78, 0.7),
+          rgba(248, 210, 78, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 5.26027px 19.726px rgba(153, 114, 23, 0.25);
+    }
+  }
+  &--milkshakes {
+    border: 2px solid #d6936d;
+    filter: drop-shadow(0px 5.26027px 19.726px rgba(212, 20, 67, 0.1));
+
+    &::before {
+      background-image: url(../images/modals/modal-3.png);
+      @include retina {
+        background-image: url(../images/modals/modal-3-2x.png);
+      }
+    }
+    &::after {
+      background: linear-gradient(
+          0deg,
+          rgba(213, 117, 63, 0.7),
+          rgba(213, 117, 63, 0.7)
+        ),
+        #d9d9d9;
+      box-shadow: 0px 5.26027px 19.726px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.product-modal-title {
+  width: 120px;
+  @include font(700, 16px, 1.25, 0.04em);
+  color: var(--dark-text-color);
+  text-align: center;
+  text-transform: uppercase;
+
+  font-style: normal;
+}

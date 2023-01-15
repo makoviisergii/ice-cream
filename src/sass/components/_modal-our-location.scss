@@ -1,0 +1,79 @@
+.backdrop-location {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.2);
+
+  transition-property: opacity, visibility;
+  z-index: 50;
+  backdrop-filter: blur(5px);
+}
+
+.modal-location {
+  width: 280px;
+  max-height: 365px;
+  margin: auto;
+  background: var(--light-text-color);
+  outline: 2px solid var(--brend-color);
+  border-radius: 10px;
+  padding: 28px;
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  @include tablet {
+    width: 568px;
+    padding: 32px 60px;
+    max-height: 458px;
+  }
+}
+
+.close-modal-location {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.modal-location-icon {
+  display: block;
+  margin: 0;
+}
+
+.modal-location-title {
+  font-family: 'Seymour One';
+  @include font(400, 16px, 1.5, null);
+  margin-bottom: 20px;
+  text-align: center;
+  @include tablet {
+    @include font(400, 20px, 1.4, null);
+    margin-bottom: 32px;
+  }
+}
+
+.modal-location-map {
+  margin-bottom: 24px;
+  @include tablet {
+    width: 448px;
+    height: 260px;
+    margin-bottom: 32px;
+  }
+}
+
+.modal-location-btn {
+  display: inline-block;
+  margin-bottom: 28px;
+  height: 42px;
+  padding: 12px 34px;
+  @include tablet {
+    margin-bottom: 32px;
+  }
+}

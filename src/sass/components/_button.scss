@@ -1,0 +1,58 @@
+.button-empty {
+  color: var(--btn-black-color);
+  background-color: transparent;
+
+  @include font(600, 12px, 1.26, null);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 11px 26px;
+  border: 2px solid var(--brend-color);
+  border-radius: 8px;
+
+  &:hover {
+    border-color: var(--btn-hover-color);
+  }
+  &:focus {
+    color: var(--light-text-color);
+    border-color: var(--btn-hover-color);
+  }
+  &:disabled {
+    color: var(--btn-black-color);
+    border-color: var(--btn-disabled-color);
+  }
+
+  @include desktop {
+    border-radius: 10px;
+    padding: 12px 34px;
+    @include font(600, 14px, 1.29, null);
+  }
+}
+
+.button-colored {
+  color: var(--btn-black-color);
+
+  @include font(600, 14px, 1.29, null);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 12px 34px;
+  background-color: var(--brend-color);
+  border-radius: 10px;
+  border: none;
+
+  &:hover {
+    background-color: var(--btn-hover-color);
+  }
+
+  &:focus {
+    color: var(--light-text-color);
+    background-color: var(--btn-hover-color);
+  }
+
+  &:disabled {
+    color: var(--btn-black-color);
+    background-color: var(--btn-disabled-color);
+  }
+}
