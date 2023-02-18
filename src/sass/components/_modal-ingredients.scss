@@ -1,0 +1,278 @@
+.backdrop-igredients {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 200ms Linear, visibility 200ms Linear;
+  overflow: auto;
+  backdrop-filter: blur(5px);
+  z-index: 30;
+}
+
+.modal-igredients {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-height: 968px;
+  margin: auto;
+  padding: 38px;
+  background-color: #fcfcfc;
+  border: 2px solid #f8d24e;
+  border-radius: 10px;
+  transition-duration: 250ms;
+  transition-property: scale;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 380px) {
+    width: 280px;
+  }
+  @include tablet {
+    width: 568px;
+    height: 449px;
+    padding: 32px 60px;
+    height: 996px;
+  }
+}
+
+.backdrop.in-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.close-modal-igredients-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include tablet {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover,
+  &:focus {
+    fill: var(--brend-color);
+  }
+}
+
+.modal-igredients-btn__icon {
+  fill: var(--dark-text-color);
+  display: block;
+  margin: 0;
+  transition-property: fill;
+}
+
+.modal-igredients-title {
+  font-family: 'Seymour One';
+  @include font(400, 20px, 1.4, null);
+  text-align: center;
+  color: var(--dark-text-color);
+  margin-bottom: 27px;
+  @include tablet {
+    margin-bottom: 31px;
+  }
+}
+
+.modal-igredients-text {
+  @include font(400, 14px, 1.4, null);
+  text-align: center;
+  color: var(--dark-text-color);
+  @include tablet {
+    @include font(null, 16px, 1.4, null);
+    text-align: left;
+    width: 448px;
+    height: 88px;
+  }
+}
+
+.modal-igredients-img-wrap {
+  position: relative;
+  border-radius: 50%;
+  width: 132px;
+  height: 132px;
+  background: linear-gradient(
+      0deg,
+      rgba(156, 190, 143, 0.7),
+      rgba(156, 190, 143, 0.7)
+    ),
+    #d9d9d9;
+  box-shadow: 0px 5.26027px 19.726px rgba(10, 136, 23, 0.25);
+  margin: 0 auto 22px;
+  @include tablet {
+    margin-bottom: 25px;
+  }
+  &::before {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(../images/modals/modal-4.png);
+
+    background-size: 100%;
+    content: '';
+    border-radius: 50%;
+    top: -7px;
+    width: 100%;
+    height: 100%;
+
+    @include tablet {
+      background-image: url(../images/modals/modal-4-2x.png);
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.modal-igredients-list {
+  justify-content: center;
+  display: flex;
+  gap: 9px;
+  @include tablet {
+    gap: 20px;
+  }
+}
+
+.modal-igredients-element {
+  display: block;
+  width: 53px;
+  height: 72px;
+  @include font(500, 10px, 2.8, null);
+  border-radius: 40px;
+  border: 2px solid #9cbe8f;
+
+  text-align: center;
+  margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 48px;
+    width: 65px;
+    height: 90px;
+  }
+}
+
+.modal-igredients-value {
+  @include font(500, 10px, 2.8, null);
+  width: 43px;
+  height: 43px;
+  display: block;
+  background: #9cbe8f;
+  box-shadow: 0px 6px 20px rgba(10, 136, 23, 0.25);
+  border-radius: 50%;
+  margin: 0 auto;
+  padding-top: 8px;
+  @include tablet {
+    width: 53px;
+    height: 53px;
+    padding-top: 12px;
+  }
+}
+.modal-igredients-recipe-title {
+  text-align: center;
+  margin-bottom: 24px;
+  @include font(500, 20px, 1.4, null);
+}
+
+.modal-igredients-recipe-list {
+  margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 48px;
+  }
+}
+.modal-igredients-recipe-item {
+  @include font(400, 14px, 1.7, 0.04em);
+  margin-bottom: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+//------form-----//
+.igredients-modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.igredients-modal-form__label {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.igredients-modal-form__wrap {
+  position: relative;
+  align-items: center;
+}
+.igredients-modal-form__input {
+  width: 240px;
+  height: 42px;
+
+  padding: 10px 11px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  @include font(400, 12px, 1.4, null);
+  color: var(--dark-text-color);
+  background: rgba(248, 210, 78, 0.1);
+  border: 1px solid var(--primery-background-color);
+  border-radius: 10px;
+
+  outline: transparent;
+  transition-property: border-color;
+  //   @include transition;
+  @include tablet {
+    width: 368px;
+    height: 42px;
+    padding: 11px 16px;
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.4, null);
+    color: var(--dark-text-color);
+  }
+  &:focus {
+    border-color: var(--brend-color);
+  }
+}
+
+.textarea {
+  margin-bottom: 24px;
+}
+.igredients-modal-form__textarea {
+  width: 240px;
+  height: 84px;
+  padding: 8px 12px;
+  resize: none;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  @include font(400, 12px, 1.4, null);
+  color: var(--dark-text-color);
+
+  background: rgba(248, 210, 78, 0.1);
+  border: 1px solid var(--primery-background-color);
+  border-radius: 10px;
+  outline: transparent;
+  transition-property: border-color;
+  //   @include transition;
+  @include tablet {
+    width: 368px;
+    height: 84px;
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.4, null);
+    color: var(--dark-text-color);
+  }
+  &:focus {
+    border-color: var(--brend-color);
+  }
+}
+
+.igredients-modal-form__btn {
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--dark-text-color);
+  padding: 12px 34px;
+  @include font(null, 12px, 1.25, null);
+  @include tablet {
+    @include font(null, 14px, 1.21, null);
+  }
+}

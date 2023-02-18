@@ -1,0 +1,102 @@
+<header class="header" id="header">
+    <div class="container header-container">
+        <div class="top-header">
+            <img srcset="./images/hero/logo.png 1x, ./images/hero/logo-2x.png 2x" class="logo" src="./images/hero/logo.png" alt="ice cream logo">
+            <ul class="header__nav">
+                <li class="nav__item"><a class="nav__link" href="#header">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="#how-its-made">How it's made?</a></li>
+                <li class="nav__item"><a class="nav__link" href="#products">Products</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contacts">Contact</a></li>
+            </ul>
+            <button type="button" class="menu-btn">
+                <span class="menu-btn__icon-wrap">
+                    <svg  class="menu-btn__icon" width="32" height="32">
+                        <use href="./images/icons.svg#icon-eva_menu-fill"></use>
+                    </svg>
+                </span>
+                <span class="menu-btn__icon-wrap visually-hidden">
+                    <svg class="menu-btn__icon" width="32" height="32">
+                        <use href="./images/icons.svg#icon-ep_close"></use>
+                    </svg>
+                </span>
+            </button>
+            <button type="button" class="buy-btn not-on-mobile" data-product-modal-open>
+                Buy now
+                <svg class="btn-buy__arrow-icon" width="12" height="12">
+                    <use href="./images/icons.svg#icon-arrow-button"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="menu is-hidden" data-menu-closed="1">
+        <div class="container menu__container">
+            <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link menu__button-link" href="#header">Home</a></li>
+                <li class="menu__item"><a class="menu__link dark menu__button-link" href="#how-its-made">How it's made?</a></li>
+                <li class="menu__item"><a class="menu__link menu__button-link" href="#products">Products</a></li>
+                <li class="menu__item"><a class="menu__link menu__button-link" href="#contacts">Contact</a></li>
+            </ul>
+            <button type="button" class="buy-btn" data-product-modal-open="">Buy now
+                <svg class="btn-buy__arrow-icon" width="12" height="12">
+                    <use href="./images/icons.svg#icon-arrow-button"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero__container container">
+        <div class="cafes-counter-wrap">
+            <p class="counter-number">16</p>
+            <p class="counter-text">cafes</p>
+        </div>
+        <div class="trucks-counter-wrap">
+            <p class="counter-number">23</p>
+            <p class="counter-text">food trucks</p>
+        </div>
+        <h1 class="section-tittle hero__tittle">Ice cream made with passion</h1>
+        <ul class="link-list">
+            <li class="link-list__item"><a href="#products" class="link-list__product-link">Products</a></li>
+            <li class="link-list__item"><a class="link-list__how-link" href="#how-its-made">How it's made?</a></li>
+        </ul>
+        <div class="not-on-mobile hero__description">
+            <picture>
+                <source srcset="./images/hero/hero-1.png 1x, ./images/hero/hero-1-2x.png 2x" media="(min-width:1200px)">
+                <source srcset="./images/hero/hero-1-tab.png 1x, ./images/hero/hero-1-tab-2x.png 2x" media="(min-width:768px)">
+                <img src="./images/hero/hero-1-tab.png" alt="plate with ice cream" class="hero__img-plate animate__animated animate__bounceInLeft">
+            </picture>
+            <div class="paragraph-with-arrow">
+                <p class="hero__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                <a class="hero_link" href="#how-its-made">
+                    <svg class="hero__arrow" width="40" height="16">
+                        <use href="./images/icons.svg#icon-arrow"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+        <div class="hero__img-wrap">
+            <picture>
+                <source srcset="./images/hero/dots-desktop.png 1x" media="(min-width: 1200px)">
+                <source srcset="./images/hero/dots-tablet.png 1x" media="(min-width: 768px)">
+                <source srcset="./images/hero/dots-mobile.png 1x" media="(max-width: 767px)">
+                <img src="./images/hero/dots-desktop.png" width="1200" height="384" alt="background dots" class="hero__background-dots">
+            </picture>
+            <picture>
+                <source
+                srcset="./images/hero/hero-2.png 1x, ./images/hero/hero-2-2x.png 2x"
+                media="(min-width: 1200px)"
+                >
+                <source
+                srcset="./images/hero/hero-2-tab.png 1x, ./images/hero/hero-2-tab-2x.png 2x"
+                media="(min-width: 768px)"
+                >
+                <source
+                srcset="./images/hero/hero-2-mob.png 1x, ./images/hero/hero-2-mob-2x.png 2x"
+                media="(max-width: 767px)">
+                <img src="./images/hero/hero-2-mob.png" alt="ice cream with three balls" width="177" class="hero__img-three-balls animate__animated animate__bounceInRight">
+            </picture>
+        </div>
+</section>

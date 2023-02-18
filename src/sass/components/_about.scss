@@ -1,0 +1,166 @@
+.about {
+  background-color: var(--primery-background-color);
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  @include desktop {
+    padding-top: 60px;
+    padding-bottom: 99px;
+  }
+}
+
+.about-section-pretitle {
+  color: var(--light-text-color);
+  margin-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  @include font(700, 18px, 1.22, null);
+  @include tablet {
+    @include font(800, 22px, null, 0.04em);
+  }
+  @include desktop {
+    @include font(null, 30px, 1.23, null);
+  }
+}
+
+.about-section-title {
+  font-family: 'Seymour One';
+  color: var(--light-text-color);
+  margin: 0 auto 32px;
+  width: 200px;
+  @include tablet {
+    width: 100%;
+    margin-bottom: 72px;
+    @include font(null, 34px, 1.26, 0.06em);
+  }
+  @include desktop {
+    width: 100%;
+    margin-bottom: 82px;
+    @include font(null, 36px, 1.27, null);
+  }
+}
+.about-content-wrap {
+  @include tablet {
+    display: flex;
+  }
+}
+.about-bg-wrap {
+  position: relative;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background: #efd478;
+  margin: 0 auto 62px;
+  @include tablet {
+    width: 330px;
+    height: 330px;
+    margin: 0;
+    margin-right: 38px;
+  }
+  @include desktop {
+    width: 490px;
+    height: 490px;
+    margin-right: 109px;
+  }
+
+  &::before {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(../images/about/about-mob.png);
+
+    background-size: 100%;
+    content: '';
+    border-radius: 50%;
+    top: 22px;
+    width: 100%;
+    height: 100%;
+    @include retina {
+      background-image: url(../images/about/about-mob-2x.png);
+    }
+
+    @include tablet {
+      background-image: url(../images/about/about-tab.png);
+      top: 26px;
+      @include retina {
+        background-image: url(../images/about/about-tab-2x.png);
+      }
+    }
+    @include desktop {
+      background-image: url(../images/about/about.png);
+      top: 39px;
+      @include retina {
+        background-image: url(../images/about/about-2x.png);
+      }
+    }
+  }
+}
+
+.about-text-button-wrap {
+  @include tablet {
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @include desktop {
+    width: 463px;
+  }
+}
+.about-text-container {
+  margin-bottom: 10px;
+  @include tablet {
+    margin-bottom: 32px;
+  }
+  @include desktop {
+    margin-bottom: 54px;
+  }
+}
+.about-text {
+  @include font(400, 12px, 1.75, 0.04em);
+  text-align: center;
+  color: var(--light-text-color);
+  padding-left: 50px;
+  padding-right: 50px;
+  @include tablet {
+    text-align: start;
+  }
+  &:not(:last-child) {
+    margin-bottom: 4px;
+    @include tablet {
+      margin-bottom: 8px;
+    }
+  }
+
+  @include tablet {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include desktop {
+    @include font(null, 16px, 1.75, null);
+  }
+}
+
+.about-btn {
+  width: 164px;
+  margin: 0 auto;
+
+  @include tablet {
+    margin: 0;
+  }
+}
+
+.about-btn__icon {
+  margin-left: 4px;
+  fill: currentColor;
+}
+
+.text-hidden {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}

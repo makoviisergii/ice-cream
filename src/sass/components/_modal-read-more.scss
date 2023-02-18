@@ -1,0 +1,101 @@
+.backdrop-rm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 200ms Linear, visibility 200ms Linear;
+  backdrop-filter: blur(5px);
+  z-index: 30;
+}
+
+.modal-rm {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 459px;
+  margin: auto;
+  padding: 28px;
+  background-color: #fcfcfc;
+  border: 2px solid #f8d24e;
+  border-radius: 10px;
+  transition-duration: 250ms;
+  transition-property: scale;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @media screen and (min-width: 380px) {
+    width: 280px;
+  }
+  @include tablet {
+    width: 568px;
+    height: 449px;
+    padding: 32px 60px;
+  }
+}
+
+.backdrop.in-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.close-modal-rm-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 0;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include tablet {
+    width: 24px;
+    height: 24px;
+  }
+  &:hover,
+  &:focus {
+    fill: var(--brend-color);
+  }
+}
+
+.modal-mr-btn__icon {
+  fill: var(--dark-text-color);
+  display: block;
+  margin: 0;
+  transition-property: fill;
+}
+
+.modal-rm-title {
+  font-family: 'Seymour One';
+  @include font(400, 16px, 1.5, null);
+  text-align: center;
+  color: var(--dark-text-color);
+  margin-bottom: 20px;
+  @include desktop {
+    @include font(null, 20px, 1.4, null);
+    margin-bottom: 32px;
+  }
+}
+
+.modal-rm-video {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  @include desktop {
+    margin-bottom: 32px;
+  }
+}
+
+.modal-rm-text {
+  @include font(400, 14px, 1.4, null);
+  text-align: left;
+  color: var(--dark-text-color);
+
+  @include desktop {
+    @include font(null, 16px, 1.4, null);
+    text-align: left;
+    width: 448px;
+    height: 88px;
+  }
+}
